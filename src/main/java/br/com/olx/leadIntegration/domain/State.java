@@ -1,4 +1,4 @@
-package br.com.olx.leadIntegration.models;
+package br.com.olx.leadIntegration.domain;
 
 import java.io.Serializable;
 import java.util.Objects;
