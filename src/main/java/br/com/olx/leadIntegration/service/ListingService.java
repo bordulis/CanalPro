@@ -51,7 +51,7 @@ public class ListingService {
 		
 		List<ModProperties> casas = repo.findAll();
 
-		casas.removeIf(a -> a.getModDistrict() == null || a.getAtivo() == 0);
+		casas.removeIf(a -> a.getModDistrict() == null || a.getAtivo() == 0 || a.getVendido() == 1);
 		//casas.removeIf(a -> a.getCode() != "CS0084");
 		
 		for (ModProperties pro : casas) {
@@ -126,7 +126,13 @@ public class ListingService {
 			n.setTitle( "<![CDATA[" + n.getTitle() + "]]>" );
 			n.getLocation().getState().setValue("<![CDATA[" + n.getLocation().getState().getValue() + "]]>");
 			n.getLocation().setCity("<![CDATA[" + n.getLocation().getCity() + "]]>");
-			n.getDetails().setDescription("<![CDATA[" + n.getDetails().getDescription() + "]]>");;
+			n.getDetails().setDescription("<![CDATA[ " + n.getDetails().getDescription() + " ]]>");;
+			n.getDetails().setDescription(n.getDetails().getDescription().replace("&nbsp;",""));
+			n.getDetails().setDescription(n.getDetails().getDescription().replace("<br>","&lt;br&gt;"));
+			n.getDetails().setDescription(n.getDetails().getDescription().replace("<strong>","&lt;b&gt;"));
+			n.getDetails().setDescription(n.getDetails().getDescription().replace("</strong>","&lt;/b&gt;"));
+			n.getDetails().setDescription(n.getDetails().getDescription().replace("<p>","&lt;br&gt; &lt;br&gt;"));
+			n.getDetails().setDescription(n.getDetails().getDescription().replace("</p>","&lt;br&gt; &lt;br&gt;"));
 		});
 
 		return lista;
