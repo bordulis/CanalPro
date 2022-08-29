@@ -2,9 +2,9 @@ package br.com.olx.leadIntegration.domain.enums;
 
 public enum TipoPropriedade {
 
-	CASA(1, "Casa"),
-	APARTAMENTO(2, "Apartamento"),
-	CASA_CONDOMINIO(3, "Casa de Condomínio");
+	CASA(1, "Residential / Home"),
+	APARTAMENTO(2, "Residential / Apartment"),
+	CASA_CONDOMINIO(3, "Residential / Condo");
 
 	private int codigo;
 	private String descricao;
