@@ -69,12 +69,13 @@ public class Location implements Serializable {
 		this.PostalCode = postalCode;
 	}
 
-	public Location(MostrarEndereco displayAddress, String city, State State, Country Country, String neighborhood) {
+	public Location(MostrarEndereco displayAddress, String city, State State, Country Country, String neighborhood, String postalCode) {
 		super();
 		this.City = city;
 		this.State = State;
 		this.Country = Country;
 		this.Neighborhood = neighborhood;
+		this.PostalCode = postalCode;
 	}
 
 	public String getDisplayAddress() {
@@ -155,7 +156,7 @@ public class Location implements Serializable {
 	}
 
 	public String getPostalCode() {
-		return PostalCode;
+		return this.PostalCode;
 	}
 
 	public void setPostalCode(String postalCode) {

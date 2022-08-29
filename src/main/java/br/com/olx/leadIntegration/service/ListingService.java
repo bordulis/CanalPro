@@ -97,7 +97,8 @@ public class ListingService {
 									"Sinop",
 									new State("MT", "Mato Grosso"),
 									new Country("BR", "Brasil"),
-									pri.get().getTitulo()
+									pri.get().getTitulo(),
+									"78550-000"
 									),
 							media,
 							new ContactInfo("Bordulis Imóveis Selecionados",
