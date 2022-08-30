@@ -6,13 +6,12 @@ import java.util.Objects;
 import br.com.olx.leadIntegration.domain.enums.PublicacaoTipo;
 import br.com.olx.leadIntegration.domain.enums.TransacaoTipo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 
-@JsonPropertyOrder({"listingID","title","transactionType","location","media","contactInfo","publicationType","details"})
-@JacksonXmlRootElement(localName = "Listing")
+@JsonPropertyOrder({"ListingID","Title","TransactionType","Location","Media","ContactInfo","PublicationType","Details"})
 public class Listing implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -50,6 +49,7 @@ public class Listing implements Serializable {
 		this.Details = details;
 	}
 
+	@JsonProperty("ListingID")
 	public String getListingID() {
 		return ListingID;
 	}
@@ -58,6 +58,7 @@ public class Listing implements Serializable {
 		ListingID = listingID;
 	}
 
+	@JsonProperty("Title")
 	public String getTitle() {
 		return Title;
 	}
@@ -66,6 +67,7 @@ public class Listing implements Serializable {
 		Title = title;
 	}
 
+	@JsonProperty("TransactionType")
 	public String getTransactionType() {
 		return TransacaoTipo.toEnum(TransactionType).getDescricao();
 	}
@@ -74,6 +76,7 @@ public class Listing implements Serializable {
 		this.TransactionType = tipo.getCodigo();
 	}
 
+	@JsonProperty("PublicationType")
 	public String getPublicationType() {
 		return PublicacaoTipo.toEnum(PublicationType).getDescricao();
 	}
@@ -82,6 +85,7 @@ public class Listing implements Serializable {
 		this.PublicationType = tipo.getCodigo();
 	}
 
+	@JsonProperty("Location")
 	public Location getLocation() {
 		return Location;
 	}
@@ -90,6 +94,7 @@ public class Listing implements Serializable {
 		Location = location;
 	}
 
+	@JsonProperty("Media")
 	public Media getMedia() {
 		return Media;
 	}
@@ -98,6 +103,7 @@ public class Listing implements Serializable {
 		Media = media;
 	}
 
+	@JsonProperty("ContactInfo")
 	public ContactInfo getContactInfo() {
 		return ContactInfo;
 	}
@@ -106,6 +112,7 @@ public class Listing implements Serializable {
 		ContactInfo = contactInfo;
 	}
 
+	@JsonProperty("Details")
 	public Details getDetails() {
 		return Details;
 	}

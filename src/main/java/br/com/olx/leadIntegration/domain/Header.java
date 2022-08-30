@@ -4,9 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JacksonXmlRootElement(localName = "Header")
+@JsonPropertyOrder({"Provider","Email","ContactName","PublishDate","Telephone"})
 public class Header implements Serializable{
 	private static final long serialVersionUID = 1L;
 
@@ -33,6 +34,7 @@ public class Header implements Serializable{
 		Telephone = telephone;
 	}
 
+	@JsonProperty("Provider")
 	public String getProvider() {
 		return Provider;
 	}
@@ -41,6 +43,7 @@ public class Header implements Serializable{
 		Provider = provider;
 	}
 
+	@JsonProperty("Email")
 	public String getEmail() {
 		return Email;
 	}
@@ -49,6 +52,7 @@ public class Header implements Serializable{
 		Email = email;
 	}
 
+	@JsonProperty("ContactName")
 	public String getContactName() {
 		return ContactName;
 	}
@@ -57,6 +61,7 @@ public class Header implements Serializable{
 		ContactName = contactName;
 	}
 
+	@JsonProperty("PublishDate")
 	public Date getPublishDate() {
 		return PublishDate;
 	}
@@ -65,6 +70,7 @@ public class Header implements Serializable{
 		PublishDate = publishDate;
 	}
 
+	@JsonProperty("Telephone")
 	public String getTelephone() {
 		return Telephone;
 	}

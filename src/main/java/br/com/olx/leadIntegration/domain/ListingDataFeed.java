@@ -5,9 +5,11 @@ import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
+@JsonPropertyOrder({"Header","Listings"})
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JacksonXmlRootElement(localName="ListingDataFeed")
 public class ListingDataFeed implements Serializable{
@@ -22,10 +24,8 @@ public class ListingDataFeed implements Serializable{
     @JacksonXmlProperty(isAttribute = true, localName = "xmlns:schemaLocation")
     private final String schemaLocation = "http://www.vivareal.com/schemas/1.0/VRSync";
 
-    @JsonProperty("Header")
 	private Header Header;
 
-    @JsonProperty("Listings")
 	private Listings Listings;
 
 	public ListingDataFeed() {
@@ -38,6 +38,7 @@ public class ListingDataFeed implements Serializable{
 		this.Listings = Listings;
 	}
 
+	@JsonProperty("Header")
 	public Header getHeader() {
 		return Header;
 	}
@@ -46,6 +47,7 @@ public class ListingDataFeed implements Serializable{
 		this.Header = Header;
 	}
 
+	@JsonProperty("Listings")
 	public Listings getListings() {
 		return Listings;
 	}

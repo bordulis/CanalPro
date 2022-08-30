@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
@@ -12,7 +13,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 public class Media implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@JacksonXmlProperty(localName = "Item")
     @JacksonXmlElementWrapper(useWrapping = false)
 	private List<Item> items = new ArrayList<>();
 
@@ -25,6 +25,7 @@ public class Media implements Serializable {
 		this.items = items;
 	}
 
+	@JsonProperty("Item")
 	public List<Item> getItems() {
 		return items;
 	}

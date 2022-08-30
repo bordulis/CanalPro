@@ -4,13 +4,12 @@ import java.io.Serializable;
 
 import br.com.olx.leadIntegration.domain.enums.MostrarEndereco;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-@JsonPropertyOrder({"country","state","city","neighborhood","address","postalCode"})
-@JacksonXmlRootElement(localName = "Location")
+@JsonPropertyOrder({"Country","State","City","Neighborhood","Address","PostalCode"})
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Location implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -93,6 +92,7 @@ public class Location implements Serializable {
 		this.displayAddress = displayAddress.getCodigo();
 	}
 
+	@JsonProperty("City")
 	public String getCity() {
 		return City;
 	}
@@ -101,6 +101,7 @@ public class Location implements Serializable {
 		City = city;
 	}
 
+	@JsonProperty("State")
 	public State getState() {
 		return State;
 	}
@@ -109,6 +110,7 @@ public class Location implements Serializable {
 		State = state;
 	}
 
+	@JsonProperty("Country")
 	public Country getCountry() {
 		return Country;
 	}
@@ -117,6 +119,7 @@ public class Location implements Serializable {
 		Country = country;
 	}
 
+	@JsonProperty("Zone")
 	public String getZone() {
 		return this.Zone;
 	}
@@ -125,6 +128,7 @@ public class Location implements Serializable {
 		Zone = zone;
 	}
 
+	@JsonProperty("Neighborhood")
 	public String getNeighborhood() {
 		return Neighborhood;
 	}
@@ -133,6 +137,7 @@ public class Location implements Serializable {
 		Neighborhood = neighborhood;
 	}
 
+	@JsonProperty("Address")
 	public String getAddress() {
 		return Address;
 	}
@@ -141,6 +146,7 @@ public class Location implements Serializable {
 		Address = address;
 	}
 
+	@JsonProperty("StreetNumber")
 	public String getStreetNumber() {
 		return StreetNumber;
 	}
@@ -149,6 +155,7 @@ public class Location implements Serializable {
 		StreetNumber = streetNumber;
 	}
 
+	@JsonProperty("Complement")
 	public String getComplement() {
 		return Complement;
 	}
@@ -157,6 +164,7 @@ public class Location implements Serializable {
 		Complement = complement;
 	}
 
+	@JsonProperty("PostalCode")
 	public String getPostalCode() {
 		return this.PostalCode;
 	}
@@ -165,6 +173,7 @@ public class Location implements Serializable {
 		PostalCode = postalCode;
 	}
 
+	@JsonProperty("Latitude")
 	public String getLatitude() {
 		return Latitude;
 	}
@@ -173,6 +182,7 @@ public class Location implements Serializable {
 		Latitude = latitude;
 	}
 
+	@JsonProperty("Longitude")
 	public String getLongitude() {
 		return Longitude;
 	}

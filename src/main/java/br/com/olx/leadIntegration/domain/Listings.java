@@ -5,15 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-@JacksonXmlRootElement(localName="Listings")
 public class Listings implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-	@JacksonXmlProperty(localName = "Listing")
     @JacksonXmlElementWrapper(useWrapping = false)
 	private List<Listing> listings = new ArrayList<>();
 
@@ -26,6 +24,7 @@ public class Listings implements Serializable{
 		this.listings = listings;
 	}
 
+	@JsonProperty("Listing")
 	public List<Listing> getListings() {
 		return listings;
 	}

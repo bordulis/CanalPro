@@ -2,11 +2,10 @@ package br.com.olx.leadIntegration.domain;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-@JsonPropertyOrder({"name","email","website","logo","officeName","telephone","location"})
-@JacksonXmlRootElement(localName = "ContactInfo")
+@JsonPropertyOrder({"Name","Email","Website","Logo","OfficeName","Telephone","Location"})
 public class ContactInfo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -39,6 +38,7 @@ public class ContactInfo implements Serializable {
 		Location = location;
 	}
 
+	@JsonProperty("Name")
 	public String getName() {
 		return Name;
 	}
@@ -47,6 +47,7 @@ public class ContactInfo implements Serializable {
 		Name = name;
 	}
 
+	@JsonProperty("Email")
 	public String getEmail() {
 		return Email;
 	}
@@ -55,6 +56,7 @@ public class ContactInfo implements Serializable {
 		Email = email;
 	}
 
+	@JsonProperty("Website")
 	public String getWebsite() {
 		return Website;
 	}
@@ -63,6 +65,7 @@ public class ContactInfo implements Serializable {
 		Website = website;
 	}
 
+	@JsonProperty("Logo")
 	public String getLogo() {
 		return Logo;
 	}
@@ -71,6 +74,7 @@ public class ContactInfo implements Serializable {
 		Logo = logo;
 	}
 
+	@JsonProperty("OfficeName")
 	public String getOfficeName() {
 		return OfficeName;
 	}
@@ -79,6 +83,7 @@ public class ContactInfo implements Serializable {
 		OfficeName = officeName;
 	}
 
+	@JsonProperty("Telephone")
 	public String getTelephone() {
 		return Telephone;
 	}
@@ -87,6 +92,7 @@ public class ContactInfo implements Serializable {
 		Telephone = telephone;
 	}
 
+	@JsonProperty("Location")
 	public Location getLocation() {
 		return Location;
 	}

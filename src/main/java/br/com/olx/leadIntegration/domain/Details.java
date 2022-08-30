@@ -5,12 +5,11 @@ import java.io.Serializable;
 import br.com.olx.leadIntegration.domain.enums.TipoPropriedade;
 import br.com.olx.leadIntegration.domain.enums.TipoUso;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
-@JsonPropertyOrder({"listPrice","description","propertyType","livingArea","lotArea","bathrooms","bedrooms","garage",
-					"floors","usageType"})
-@JacksonXmlRootElement(localName = "Details")
+@JsonPropertyOrder({"ListPrice","Description","PropertyType","LivingArea","LotArea","Bathrooms","Bedrooms","Garage",
+					"Floors","UsageType"})
 public class Details implements Serializable{
 	private static final long serialVersionUID = 1L;
 
@@ -53,6 +52,7 @@ public class Details implements Serializable{
 		this.UsageType = usageType.getCodigo();
 	}
 
+	@JsonProperty("ListPrice")
 	public ListPrice getListPrice() {
 		return ListPrice;
 	}
@@ -61,6 +61,7 @@ public class Details implements Serializable{
 		ListPrice = listPrice;
 	}
 
+	@JsonProperty("Description")
 	public String getDescription() {
 		if (this.Description != null) {
 			if (this.Description.length() < 50) {
@@ -94,6 +95,7 @@ public class Details implements Serializable{
 		Description = description;
 	}
 
+	@JsonProperty("PropertyType")
 	public String getPropertyType() {
 		if (this.PropertyType != null) {
 			return TipoPropriedade.toEnum(PropertyType).getDescricao();
@@ -107,6 +109,7 @@ public class Details implements Serializable{
 		this.PropertyType = tipoPropriedade.getCodigo();
 	}
 
+	@JsonProperty("UsageType")
 	public String getUsageType() {
 		if (this.UsageType != null) {
 			return TipoUso.toEnum(UsageType).getDescricao();
@@ -120,6 +123,7 @@ public class Details implements Serializable{
 		this.UsageType = tipoUso.getCodigo();
 	}
 
+	@JsonProperty("LivingArea")
 	public LivingArea getLivingArea() {
 		return LivingArea;
 	}
@@ -128,6 +132,7 @@ public class Details implements Serializable{
 		LivingArea = livingArea;
 	}
 
+	@JsonProperty("LotArea")
 	public LotArea getLotArea() {
 		return LotArea;
 	}
@@ -136,6 +141,7 @@ public class Details implements Serializable{
 		LotArea = lotArea;
 	}
 
+	@JsonProperty("Bathrooms")
 	public Integer getBathrooms() {
 		return Bathrooms;
 	}
@@ -144,6 +150,7 @@ public class Details implements Serializable{
 		Bathrooms = bathrooms;
 	}
 
+	@JsonProperty("Bedrooms")
 	public Integer getBedrooms() {
 		return Bedrooms;
 	}
@@ -152,6 +159,7 @@ public class Details implements Serializable{
 		Bedrooms = bedrooms;
 	}
 
+	@JsonProperty("Garage")
 	public Integer getGarage() {
 		return Garage;
 	}
@@ -160,6 +168,7 @@ public class Details implements Serializable{
 		Garage = garage;
 	}
 
+	@JsonProperty("Floors")
 	public Integer getFloors() {
 		return Floors;
 	}
