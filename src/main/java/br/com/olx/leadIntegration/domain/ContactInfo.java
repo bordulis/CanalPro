@@ -2,8 +2,10 @@ package br.com.olx.leadIntegration.domain;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
+@JsonPropertyOrder({"name","email","website","logo","officeName","telephone","location"})
 @JacksonXmlRootElement(localName = "ContactInfo")
 public class ContactInfo implements Serializable {
 	private static final long serialVersionUID = 1L;

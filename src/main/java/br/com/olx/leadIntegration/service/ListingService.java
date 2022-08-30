@@ -132,7 +132,7 @@ public class ListingService {
 			n.getDetails().setDescription(n.getDetails().getDescription().replace("<br>","&lt;br&gt;"));
 			n.getDetails().setDescription(n.getDetails().getDescription().replace("<strong>","&lt;b&gt;"));
 			n.getDetails().setDescription(n.getDetails().getDescription().replace("</strong>","&lt;/b&gt;"));
-			n.getDetails().setDescription(n.getDetails().getDescription().replace("<p>","&lt;br&gt; &lt;br&gt;"));
+			n.getDetails().setDescription(n.getDetails().getDescription().replace("<p>",""));
 			n.getDetails().setDescription(n.getDetails().getDescription().replace("</p>","&lt;br&gt; &lt;br&gt;"));
 		});
 

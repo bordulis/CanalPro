@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
@@ -21,8 +22,10 @@ public class ListingDataFeed implements Serializable{
     @JacksonXmlProperty(isAttribute = true, localName = "xmlns:schemaLocation")
     private final String schemaLocation = "http://www.vivareal.com/schemas/1.0/VRSync";
 
+    @JsonProperty("Header")
 	private Header Header;
 
+    @JsonProperty("Listings")
 	private Listings Listings;
 
 	public ListingDataFeed() {

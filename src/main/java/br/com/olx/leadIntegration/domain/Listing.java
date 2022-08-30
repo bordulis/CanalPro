@@ -5,9 +5,13 @@ import java.util.Objects;
 
 import br.com.olx.leadIntegration.domain.enums.PublicacaoTipo;
 import br.com.olx.leadIntegration.domain.enums.TransacaoTipo;
+
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
+
+@JsonPropertyOrder({"listingID","title","transactionType","location","media","contactInfo","publicationType","details"})
 @JacksonXmlRootElement(localName = "Listing")
 public class Listing implements Serializable {
 	private static final long serialVersionUID = 1L;
