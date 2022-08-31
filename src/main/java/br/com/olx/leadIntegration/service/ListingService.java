@@ -113,7 +113,7 @@ public class ListingService {
 											TipoPropriedade.CASA,
 											new LivingArea("square metres", pro.getAreaConstruida()),
 											new LotArea("square metres", pro.getTerreno()),
-											0,
+											3,
 											pro.getQuarto(),
 											pro.getGaragem(),
 											1,
