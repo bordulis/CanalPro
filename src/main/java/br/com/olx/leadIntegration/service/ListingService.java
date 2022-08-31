@@ -52,7 +52,6 @@ public class ListingService {
 		List<ModProperties> casas = repo.findAll();
 
 		casas.removeIf(a -> a.getModDistrict() == null || a.getAtivo() == 0 || a.getVendido() == 1);
-		//casas.removeIf(a -> a.getCode() != "CS0084");
 		
 		for (ModProperties pro : casas) {
 
@@ -98,7 +97,7 @@ public class ListingService {
 									new State("MT", "Mato Grosso"),
 									new Country("BR", "Brasil"),
 									pri.get().getTitulo(),
-									"78550-000"
+									"78556-500"
 									),
 							media,
 							new ContactInfo("Bordulis Imóveis Selecionados",
@@ -106,7 +105,7 @@ public class ListingService {
 											"https://bordulis.com",
 											"https://bordulis.com/upload/1/1/6037bcf177ffc58ae5.png",
 											"Bordulis Imóveis Selecionados",
-											"66 99662-5248",
+											"(66) 99985-6929",
 											new Location(new Country("BR", "Brasil"), new State("MT", "Mato Grosso"), "Sinop", "Aquarela Brasil", "Rua Dorival Cayme, 151", "78556-500")),
 							Ptipo,
 							new Details(new ListPrice(pro.getPreco(), "BRL"),

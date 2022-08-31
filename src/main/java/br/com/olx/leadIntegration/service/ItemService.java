@@ -27,10 +27,13 @@ public class ItemService {
 		images.removeIf(a -> a.getModuloId() == 9);
 
 		List<Item> items = new ArrayList<>();
+		
+		Integer i = 2;
 
 		for (Images im : images) {
 			
-			items.add(new Item("image","img" + im.getOrdem().toString(),"", hostname + im.getUrl()));
+			items.add(new Item("image","img" + i.toString() ,"", hostname + im.getUrl()));
+			i++;
 		}
 
 		return items;
