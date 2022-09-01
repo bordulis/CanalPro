@@ -176,4 +176,9 @@ public class Details implements Serializable{
 	public void setFloors(Integer floors) {
 		Floors = floors;
 	}
+
+	@Override
+	public String toString() {
+		return "Details [ListPrice=" + ListPrice + ", PropertyType=" + PropertyType + "]";
+	}
 }

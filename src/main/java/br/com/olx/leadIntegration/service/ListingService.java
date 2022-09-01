@@ -90,6 +90,18 @@ public class ListingService {
 						Ptipo = PublicacaoTipo.STANDARD;						
 					}
 				}
+				
+				TipoPropriedade tipoIMovel = null;
+				
+				if (pro.getTipo() == null) {
+					tipoIMovel = TipoPropriedade.CASA;
+				}
+				else if (pro.getTipo() == 1) {
+					tipoIMovel = TipoPropriedade.CASA;
+				}
+				else if (pro.getTipo() == 2) {
+					tipoIMovel = TipoPropriedade.APARTAMENTO;
+				}
 
 				lista.getListings().add(new Listing(
 							pro.getCode(),
@@ -113,7 +125,7 @@ public class ListingService {
 							Ptipo,
 							new Details(new ListPrice(pro.getPreco(), "BRL"),
 											pro.getDecricao(),
-											TipoPropriedade.CASA,
+											tipoIMovel,
 											new LivingArea("square metres", pro.getAreaConstruida()),
 											new LotArea("square metres", pro.getTerreno()),
 											3,
