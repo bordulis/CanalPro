@@ -77,6 +77,7 @@ public class Location implements Serializable {
 		this.Country = Country;
 		this.Neighborhood = neighborhood;
 		this.PostalCode = postalCode;
+		this.displayAddress = displayAddress.getCodigo();
 	}
 
 	public String getDisplayAddress() {

@@ -44,6 +44,9 @@ public class ListingService {
 
 	@Autowired
 	private ItemService itemService;
+	
+	@Autowired
+	private BairroService bairroService;
 
 	public Listings getListing() {
 
@@ -97,7 +100,7 @@ public class ListingService {
 									new State("MT", "Mato Grosso"),
 									new Country("BR", "Brasil"),
 									pri.get().getTitulo(),
-									"78556-500"
+									bairroService.getBairroCEP(pri.get().getTitulo())
 									),
 							media,
 							new ContactInfo("Bordulis Imóveis Selecionados",
@@ -106,7 +109,7 @@ public class ListingService {
 											"https://bordulis.com/upload/1/1/6037bcf177ffc58ae5.png",
 											"Bordulis Imóveis Selecionados",
 											"(66) 99985-6929",
-											new Location(new Country("BR", "Brasil"), new State("MT", "Mato Grosso"), "Sinop", "Aquarela Brasil", "Rua Dorival Cayme, 151", "78556-500")),
+											new Location(new Country("BR", "Brasil"), new State("MT", "Mato Grosso"), "Sinop", "Aquarela Brasil", "Rua Dorival Caymmi, 151", "78556-500")),
 							Ptipo,
 							new Details(new ListPrice(pro.getPreco(), "BRL"),
 											pro.getDecricao(),
