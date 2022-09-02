@@ -48,6 +48,9 @@ public class ListingService {
 	@Autowired
 	private BairroService bairroService;
 
+	@Autowired
+	private FeatureService featureService;
+
 	public Listings getListing() {
 
 		Listings lista = new Listings();
@@ -128,6 +131,7 @@ public class ListingService {
 											tipoIMovel,
 											new LivingArea("square metres", pro.getAreaConstruida()),
 											new LotArea("square metres", pro.getTerreno()),
+											featureService.getFeatures(pro.getDecricao(), pri.get().getTitulo()),
 											3,
 											pro.getQuarto(),
 											pro.getGaragem(),

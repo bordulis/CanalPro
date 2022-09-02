@@ -8,7 +8,7 @@ import br.com.olx.leadIntegration.domain.enums.TipoUso;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({"ListPrice","Description","PropertyType","LivingArea","LotArea","Bathrooms","Bedrooms","Garage",
+@JsonPropertyOrder({"ListPrice","Description","PropertyType","LivingArea","LotArea","Features","Bathrooms","Bedrooms","Garage",
 					"Floors","UsageType"})
 public class Details implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -22,6 +22,8 @@ public class Details implements Serializable{
 	private LivingArea LivingArea;
 	
 	private LotArea LotArea;
+	
+	private Features Features;
 	
 	private Integer Bathrooms;
 	
@@ -38,13 +40,14 @@ public class Details implements Serializable{
 	}
 
 	public Details(ListPrice listPrice, String description, TipoPropriedade propertyType, LivingArea livingArea, LotArea lotArea,
-					Integer bathrooms, Integer bedrooms, Integer garage, Integer floors, TipoUso usageType) {
+			Features features,Integer bathrooms, Integer bedrooms, Integer garage, Integer floors, TipoUso usageType) {
 		super();
 		ListPrice = listPrice;
 		this.Description = description;
 		this.PropertyType = propertyType.getCodigo();
 		this.LivingArea = livingArea;
 		this.LotArea = lotArea;
+		this.Features = features;
 		this.Bathrooms = bathrooms;
 		this.Bedrooms = bedrooms;
 		this.Garage = garage;
@@ -139,6 +142,15 @@ public class Details implements Serializable{
 
 	public void setLotArea(LotArea lotArea) {
 		LotArea = lotArea;
+	}
+
+	@JsonProperty("Features")
+	public Features getFeatures() {
+		return Features;
+	}
+
+	public void setFeatures(Features features) {
+		Features = features;
 	}
 
 	@JsonProperty("Bathrooms")
