@@ -80,7 +80,10 @@ public class FeatureService {
 		feats.add("TV Security");
 		feats.add("Security Guard on Duty");
 		feats.add("Fenced Yard");
+		feats.add("Sports Court");
+		feats.add("Tennis court");
 		feats.add("Green space / Park");
+		feats.add("Gym");
 		
 		return feats;
 	}
@@ -89,11 +92,11 @@ public class FeatureService {
 		
 		List<String> feats = new ArrayList<>();
 		
-		feats.add("Controlled Access");
 		feats.add("TV Security");
 		feats.add("Security Guard on Duty");
 		feats.add("Sports Court");
 		feats.add("Tennis court");
+		feats.add("Controlled Access");
 		feats.add("Green space / Park");
 		
 		return feats;
