@@ -4,7 +4,8 @@ public enum TipoPropriedade {
 
 	CASA(1, "Residential / Home"),
 	APARTAMENTO(2, "Residential / Apartment"),
-	CASA_CONDOMINIO(3, "Residential / Condo");
+	CASA_CONDOMINIO(3, "Residential / Condo"),
+	TERRENO(4, "Residential / Land Lot");
 
 	private int codigo;
 	private String descricao;

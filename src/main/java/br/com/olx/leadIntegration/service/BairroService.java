@@ -24,7 +24,7 @@ public class BairroService {
 				break;
 
 			case "Portal da Mata" :
-				cep = "78555-901";
+				cep = "78550-970";
 				break;
 
 			case "Recanto Suíço" :
@@ -108,7 +108,7 @@ public class BairroService {
 				break;
 
 			case "Monet" :
-				cep = "78556-389";
+				cep = "78550-970";
 				break;
 
 			case "Residencial Ipanema" :
@@ -118,7 +118,6 @@ public class BairroService {
 			default :
 				cep = "78556-500";
 				break;
-		
 		}
 		
 		return cep;

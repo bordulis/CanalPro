@@ -105,6 +105,12 @@ public class ListingService {
 				else if (pro.getTipo() == 2) {
 					tipoIMovel = TipoPropriedade.APARTAMENTO;
 				}
+				else if (pro.getTipo() == 4) {
+					tipoIMovel = TipoPropriedade.TERRENO;
+				}
+				else {
+					tipoIMovel = TipoPropriedade.CASA;
+				}
 
 				lista.getListings().add(new Listing(
 							pro.getCode(),
