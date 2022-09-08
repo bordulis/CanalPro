@@ -138,7 +138,7 @@ public class ListingService {
 											new LivingArea("square metres", pro.getAreaConstruida()),
 											new LotArea("square metres", pro.getTerreno()),
 											featureService.getFeatures(pro.getDecricao(), pri.get().getTitulo()),
-											3,
+											pro.getTipo() == 4 ? 0 : 3,
 											pro.getQuarto(),
 											pro.getGaragem(),
 											1,

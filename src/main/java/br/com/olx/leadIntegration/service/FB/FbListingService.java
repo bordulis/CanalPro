@@ -56,11 +56,33 @@ public class FbListingService {
 				listing imv = new listing();
 				
 				imv.setHome_listing_id(pro.getCode());
-				imv.setName("Casa | " + pri.get().getTitulo());
+
+				if (pro.getTipo() == null) {
+					imv.setName("Casa | " + pri.get().getTitulo());
+				}
+				else if (pro.getTipo() == 1) {
+					imv.setName("Casa | " + pri.get().getTitulo());
+				}
+				else if (pro.getTipo() == 2) {
+					imv.setName("Apartamento | " + pri.get().getTitulo());
+				}
+				else if (pro.getTipo() == 4) {
+					imv.setName("Terreno | " + pri.get().getTitulo());
+				}
+				else {
+					imv.setName("Casa | " + pri.get().getTitulo());
+				}
+
 				imv.setAvailability("for_sale");
 				imv.setDescription(pro.getDecricao().replace("&nbsp;","").replace("<br>","")
 													.replace("<br>","").replace("<strong>","")
 													.replace("</strong>","").replace("<p>","")
+													.replace("</p>","")
+													.replace("<p style=\"margin-left:0px;\">","")
+													.replace("<span style=\"background-color:transparent;color:rgb(69,66,62);\">","")
+													.replace("<p style=\"margin-left:0px;\">","")
+													.replace("<span style=\"color:rgb(69,66,62);\">","")
+													.replace("</span>","")
 													.replace("</p>",""));
 				List<component> comp = new ArrayList<component>();
 				
@@ -103,7 +125,7 @@ public class FbListingService {
 					imv.setProperty_type("house");
 				}
 				
-				String url = "https://bordulis.com/";
+				String url = "https://bordulis.com/imoveis/";
 
 				if (pro.getTipo() == null) {
 					url += "casa-";
@@ -124,9 +146,11 @@ public class FbListingService {
 				url += pri.get().getTitulo().replace(" ","-") + "-" + pro.getId();				
 				imv.setUrl(Normalizer.normalize(url, Normalizer.Form.NFC));
 				
-				imv.setYear_built(2020);
+				imv.setYear_built(2022);
 				
-				lista.add(imv);
+				if (items.size() > 0) {
+					lista.add(imv);					
+				}
 			}
 		}
 
