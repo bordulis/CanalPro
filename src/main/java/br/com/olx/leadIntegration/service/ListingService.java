@@ -25,6 +25,7 @@ import br.com.olx.leadIntegration.domain.Media;
 import br.com.olx.leadIntegration.domain.State;
 import br.com.olx.leadIntegration.domain.enums.MostrarEndereco;
 import br.com.olx.leadIntegration.domain.enums.PublicacaoTipo;
+import br.com.olx.leadIntegration.domain.enums.TipoInformacaoBairro;
 import br.com.olx.leadIntegration.domain.enums.TipoPropriedade;
 import br.com.olx.leadIntegration.domain.enums.TipoPropriedadeBordulis;
 import br.com.olx.leadIntegration.domain.enums.TipoUso;
@@ -121,7 +122,9 @@ public class ListingService {
 									new State("MT", "Mato Grosso"),
 									new Country("BR", "Brasil"),
 									pri.get().getTitulo(),
-									bairroService.getBairroCEP(pri.get().getTitulo())
+									bairroService.getBairroCEPouLocalizacao(pri.get().getTitulo(), TipoInformacaoBairro.CEP),
+									bairroService.getBairroCEPouLocalizacao(pri.get().getTitulo(), TipoInformacaoBairro.LATITUDE),
+									bairroService.getBairroCEPouLocalizacao(pri.get().getTitulo(), TipoInformacaoBairro.LONGITUDE)
 									),
 							media,
 							new ContactInfo("Bordulis Imóveis Selecionados",

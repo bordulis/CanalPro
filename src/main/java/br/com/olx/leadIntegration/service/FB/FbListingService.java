@@ -14,6 +14,7 @@ import br.com.olx.leadIntegration.DTO.ModProperties;
 import br.com.olx.leadIntegration.Repository.ModDistrictsRepository;
 import br.com.olx.leadIntegration.Repository.ModPropertiesRepository;
 import br.com.olx.leadIntegration.domain.Item;
+import br.com.olx.leadIntegration.domain.enums.TipoInformacaoBairro;
 import br.com.olx.leadIntegration.facebook.address;
 import br.com.olx.leadIntegration.facebook.component;
 import br.com.olx.leadIntegration.facebook.image;
@@ -90,7 +91,7 @@ public class FbListingService {
 				comp.add(new component("city", "Sinop"));
 				comp.add(new component("region", "Mato Grosso"));
 				comp.add(new component("country", "Brasil"));
-				comp.add(new component("postal_code", bairroService.getBairroCEP(pri.get().getTitulo())));				
+				comp.add(new component("postal_code", bairroService.getBairroCEPouLocalizacao(pri.get().getTitulo(), TipoInformacaoBairro.CEP)));				
 				imv.setAddress(new address("simple",comp));
 				
 				imv.setLatitude("-11.857323");

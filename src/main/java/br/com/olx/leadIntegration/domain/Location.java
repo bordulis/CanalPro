@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-@JsonPropertyOrder({"Country","State","City","Neighborhood","Address","PostalCode"})
+@JsonPropertyOrder({"Country","State","City","Neighborhood","Address","PostalCode","Latitude","Longitude"})
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Location implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -70,7 +70,8 @@ public class Location implements Serializable {
 		this.PostalCode = postalCode;
 	}
 
-	public Location(MostrarEndereco displayAddress, String city, State State, Country Country, String neighborhood, String postalCode) {
+	public Location(MostrarEndereco displayAddress, String city, State State, Country Country, String neighborhood, String postalCode,
+					String latitude, String longitude) {
 		super();
 		this.City = city;
 		this.State = State;
@@ -78,6 +79,8 @@ public class Location implements Serializable {
 		this.Neighborhood = neighborhood;
 		this.PostalCode = postalCode;
 		this.displayAddress = displayAddress.getCodigo();
+		this.Latitude = latitude;
+		this.Longitude = longitude;
 	}
 
 	public String getDisplayAddress() {
